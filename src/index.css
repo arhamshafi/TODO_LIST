@@ -1,0 +1,300 @@
+@import "tailwindcss";
+
+* {
+        font-family: "Tagesschrift", system-ui;
+        font-weight: 400;
+        font-style: normal;
+}
+
+.main {
+        background: linear-gradient(to bottom right, #b0e0e6, #87ceeb, #00bfff, #0b1d3a);
+}
+
+.tsh {
+        text-shadow: .1px .1px 3px white;
+}
+
+.input-group {
+        position: relative;
+}
+
+.input {
+        border-radius: 10px;
+        background-color: white;
+        border: solid transparent 1px;
+        padding: 9px 12px;
+        font-size: 1rem;
+        color: black;
+        transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+        width: 100%;
+}
+
+.user-label {
+        position: absolute;
+        left: 10px;
+        top: -6px;
+        color: black;
+        pointer-events: none;
+        transform: translateY(1rem);
+        transition: all .3s ease-in-out;
+        background-color: transparent;
+}
+
+.input:focus {
+        outline: none;
+        border: solid #08adfa 1px;
+}
+
+.input:focus~.user-label,
+.input:valid~.user-label {
+        transform: translateY(-50%) scale(0.8);
+        background-color: #212121;
+        border-radius: 5px;
+        padding: 0 5px;
+        color: white;
+        font-size: 13px;
+        top: 0;
+}
+
+.shadow__btn {
+        padding: 8px 10px;
+        border: none;
+        font-size: 17px;
+        color: #fff;
+        border-radius: 7px;
+        letter-spacing: 4px;
+        cursor: pointer;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: .1s all ease;
+        transition-property: box-shadow;
+}
+
+.shadow__btn {
+        background: rgb(0, 140, 255);
+        box-shadow: 0 0 25px rgb(0, 140, 255);
+}
+
+.shadow__btn:hover {
+        box-shadow: 0 0 5px rgb(202, 204, 206),
+                0 0 25px rgb(0, 140, 255),
+                0 0 50px rgb(247, 247, 247),
+                0 0 100px rgb(0, 140, 255);
+}
+
+.shadow__btn:active {
+        transform: scale(.95);
+}
+
+.context {
+        cursor: context-menu;
+}
+
+.delete-button {
+        position: relative;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-size: 1em;
+        transition: transform 0.2s ease;
+}
+
+.trash-svg {
+        width: 1.7em;
+        height: 1.7em;
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        overflow: visible;
+}
+
+#lid-group {
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.delete-button:hover #lid-group {
+        transform: rotate(-28deg) translateY(2px);
+}
+
+.delete-button:active #lid-group {
+        transform: rotate(-12deg) scale(0.98);
+}
+
+.delete-button:hover .trash-svg {
+        transform: scale(1.08) rotate(3deg);
+}
+
+.delete-button:active .trash-svg {
+        transform: scale(0.96) rotate(-1deg);
+}
+
+.edit_btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100px;
+        height: 40px;
+        border: none;
+        padding: 0px 20px;
+        background-color: rgb(0, 140, 255);
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+        transform: scale(.7) translateY(-3px);
+        border-radius: 10px;
+        box-shadow: 5px 5px 0px rgb(6, 118, 209);
+        transition-duration: 0.3s;
+}
+
+.svg {
+        width: 13px;
+        position: absolute;
+        right: 0;
+        margin-right: 20px;
+        fill: white;
+        transition-duration: 0.3s;
+}
+
+.edit_btn:hover {
+        color: transparent;
+}
+
+.edit_btn:hover .svg {
+        right: 43%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        transition-duration: 0.3s;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: rgb(16, 111, 255);
+        border-radius: 10px;
+}
+
+.list {
+        transition: all .2s ease;
+}
+
+.list:hover {
+        transform: scale(1.05);
+        background-color: rgb(34, 34, 34);
+}
+
+.container {
+        width: 250px;
+        height: 250px;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+}
+
+.cloud {
+        width: 250px;
+}
+
+.front {
+        padding-top: 45px;
+        margin-left: 25px;
+        display: inline;
+        position: absolute;
+        z-index: 11;
+        animation: clouds 8s infinite;
+        animation-timing-function: ease-in-out;
+}
+
+.back {
+        margin-top: -30px;
+        margin-left: 150px;
+        z-index: 12;
+        animation: clouds 12s infinite;
+        animation-timing-function: ease-in-out;
+}
+
+.right-front {
+        width: 45px;
+        height: 45px;
+        border-radius: 50% 50% 50% 0%;
+        background-color: #4c9beb;
+        display: inline-block;
+        margin-left: -25px;
+        z-index: 5;
+}
+
+.left-front {
+        width: 65px;
+        height: 65px;
+        border-radius: 50% 50% 0% 50%;
+        background-color: #4c9beb;
+        display: inline-block;
+        z-index: 5;
+}
+
+.right-back {
+        width: 50px;
+        height: 50px;
+        border-radius: 50% 50% 50% 0%;
+        background-color: #4c9beb;
+        display: inline-block;
+        margin-left: -20px;
+        z-index: 5;
+}
+
+.left-back {
+        width: 30px;
+        height: 30px;
+        border-radius: 50% 50% 0% 50%;
+        background-color: #4c9beb;
+        display: inline-block;
+        z-index: 5;
+}
+
+.sun {
+        width: 120px;
+        height: 120px;
+        background: -webkit-linear-gradient(to right, #fcbb04, #fffc00);
+        background: linear-gradient(to right, #fcbb04, #fffc00);
+        border-radius: 60px;
+        display: inline;
+        position: absolute;
+}
+
+.sunshine {
+        animation: sunshines 2s infinite;
+}
+
+@keyframes sunshines {
+        0% {
+                transform: scale(1);
+                opacity: 0.6;
+        }
+
+        100% {
+                transform: scale(1.4);
+                opacity: 0;
+        }
+}
+
+@keyframes clouds {
+        0% {
+                transform: translateX(15px);
+        }
+
+        50% {
+                transform: translateX(0px);
+        }
+
+        100% {
+                transform: translateX(15px);
+        }
+}
