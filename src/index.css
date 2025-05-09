@@ -298,3 +298,11 @@
                 transform: translateX(15px);
         }
 }
+@media screen and (max-width:374px) {   
+        .delete-button{
+                transform: scale(.8);
+        }
+        .edit_btn{
+                transform: scale(.6);
+        }
+}

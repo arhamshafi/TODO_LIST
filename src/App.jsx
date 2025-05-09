@@ -64,9 +64,12 @@ function App() {
   return (
 
 
-    <div className='main h-screen py-2 relative'>
-      <div className='absulote'>
-        <div className="container">
+    <div className='main h-max lg:h-screen pt-1 pb-8'>
+      
+      <h1 className='text-center font-bold text-xl sm:text-3xl text-white tsh tracking-[2px] mt-8  flex justify-center items-center gap-3 context'>ADVANCE <div></div> TODO_LIST</h1>
+
+      <div className='w-full flex justify-center lg:justify-start lg:items-center mt-8 relative scale-[.8] lg:scale-[1]'>
+        <div className="container ">
           <div className="cloud front">
             <span className="left-front"></span>
             <span className="right-front"></span>
@@ -78,12 +81,10 @@ function App() {
             <span className="right-back"></span>
           </div>
         </div>
-      </div>
+        </div>
 
-      <h1 className='text-center font-bold text-3xl text-white tsh tracking-[2px] mt-8  flex justify-center items-center gap-3 context'>ADVANCE <div></div> TODO_LIST</h1>
-
-      <div className='w-max mt-12 mx-auto flex justif-center items-center gap-2'>
-        <div className="input-group w-[400px] ">
+      <div className='w-full sm:w-max mt-50 lg:mt-4 mx-auto flex justify-center items-center gap-2 '>
+        <div className="input-group w-[200px] sm:w-[350px] md:w-[400px] ">
           <input type="text" name="text" autoComplete="off" className="input" required value={inp} onChange={onchange} />
           <label className="user-label">First Name</label>
         </div>
@@ -96,7 +97,7 @@ function App() {
         </button>
       </div>
 
-      <div className='w-3/4 mx-auto mt-10 h-[400px] overflow-y-auto context custom-scrollbar'>
+      <div className='w-[90%] md:w-3/4 lg:w-1/2 mx-auto mt-10 h-[350px] lg:h-[350px] overflow-y-auto context custom-scrollbar'>
         <List setIndex={setIndex} arr={arr} setinp={setinp} setarr={setarr}  setediting={setediting}/>
       </div>
 
